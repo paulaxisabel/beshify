@@ -63,28 +63,38 @@ const darkModeSwitchInner = document.getElementById("darkModeSwitchInner");
 const body = document.body;
 const footer = document.querySelector("footer");
 
+const isDarkMode = localStorage.getItem("darkMode") === "true";
+darkModeSwitch.checked = isDarkMode;
+updateDarkMode(isDarkMode);
+
 darkModeSwitch.addEventListener("change", () => {
-  if (darkModeSwitch.checked) {
-    body.style.backgroundColor = "#27272a";
-    body.style.color = "#f1f5f9";
-    footer.style.backgroundColor = "#27272a";
-    footer.style.color = "#f1f5f9";
-    textInput.style.backgroundColor = "#353537";
-    textInput.style.color = "#f1f5f9";
-    generatedText.style.backgroundColor = "#353537";
-    generatedText.style.color = "#f1f5f9";
-  } else {
-    body.style.backgroundColor = "#f1f5f9";
-    body.style.color = "#27272a";
-    footer.style.backgroundColor = "#f1f5f9";
-    footer.style.color = "#27272a";
-    textInput.style.backgroundColor = "#f8f9fa";
-    textInput.style.color = "#000000";
-    generatedText.style.backgroundColor = "#f8f9fa";
-    generatedText.style.color = "#000000";
-  }
+  const isDarkMode = darkModeSwitch.checked;
+  updateDarkMode(isDarkMode);
+  localStorage.setItem("darkMode", isDarkMode.toString());
 });
 
 darkModeSwitchInner.addEventListener("change", () => {
   darkModeSwitch.checked = darkModeSwitchInner.checked;
 });
+
+function updateDarkMode(isDarkMode) {
+  if (isDarkMode) {
+    body.style.backgroundColor = "#27272a";
+    body.style.color = "#f7fafc";
+    footer.style.backgroundColor = "#27272a";
+    footer.style.color = "#f7fafc";
+    textInput.style.backgroundColor = "#353537";
+    textInput.style.color = "#f7fafc";
+    generatedText.style.backgroundColor = "#353537";
+    generatedText.style.color = "#f7fafc";
+  } else {
+    body.style.backgroundColor = "#f7fafc";
+    body.style.color = "#27272a";
+    footer.style.backgroundColor = "#f7fafc";
+    footer.style.color = "#27272a";
+    textInput.style.backgroundColor = "#edf1ff";
+    textInput.style.color = "#000000";
+    generatedText.style.backgroundColor = "#edf1ff";
+    generatedText.style.color = "#000000";
+  }
+}
