@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beshify</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤸‍♀️</text></svg>">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+  <div class="content">
+    <div class="container">
+      <div class="dark-mode">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="darkModeSwitch">
+          <label class="custom-control-label" for="darkModeSwitch"></label>
+        </div>
+      </div>
+
+      <h1 class="text-center">🤸‍ Beshify 🤸‍</h1>
+      <div class="description">
+        <p class="text-center">Beshify is a fun project inspired by a <a href="https://www.youtube.com/watch?v=F0cqLhz2lzE">viral meme</a> on social media. It generates text with the 🤸 emoji placed between words, adding a playful touch to your messages. This project was created purely for entertainment purposes and aims to bring a smile to your face. Have fun Beshifying your text!</p>
+        <br>
+      </div>
+      <div class="text-box">
+        <textarea class="form-control" id="textInput" rows="3" placeholder="Enter your text here"></textarea>
+      </div>
+      <button class="btn btn-primary generate-button" type="button">Generate</button>
+      <div class="generated-text-box">
+        <textarea class="form-control generated-text" id="generatedText" rows="3" placeholder="Generated Text" readonly></textarea>
+        <span class="copy-alert" id="copyAlert">Copied to clipboard!</span>
+      </div>
+      <button class="btn btn-primary copy-button" id="copyButton" type="button">Copy to Clipboard</button>
+      <button class="btn btn-secondary reset-button" type="button">Reset</button>
+      <span class="empty-alert" id="emptyAlert">Input field should not be empty!</span>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>Made with ❤️ by <a href="https://github.com/paulaxisabel">Paula Isabel Signo</a>.</p>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/7573cb7850.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="./js/main.js">
+  </script>
+</body>
+
+</html>
